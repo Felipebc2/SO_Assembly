@@ -1,0 +1,44 @@
+# Descrição
+
+Nesta atividade, a pasta desafio possui um arquivo chamado `desafio.c`, que é um
+programa envolvendo alocação dinâmica de memória e que não possui um controle
+adequado sobre a memória alocada. Sua tarefa é localizar no arquivo, a exata
+linha onde ocorre a alocação de memória problemática, que é a resposta para a
+atividade. Para isso você poderá utilizar a ferramenta `valgrind` para te
+auxiliar.
+
+`valgrind` é uma ferramenta de depuração que identifica problemas de
+gerenciamento de memória em programas, como vazamentos e acessos inválidos. Ele
+simula a execução do programa, monitorando a utilização de memória e gerando
+relatórios detalhados para ajudar na correção de bugs. Esse software possui um
+conjunto de ferramentas auxiliares, dentre elas, a `callgrind`, que serve para
+gerar relatórios de instruçõers, acessos à cache e até predições de um programa.
+(consulte em: https://valgrind.org/docs/manual/cg-manual.html)
+
+Para gerar um relatório sobre a execução de um programa, utilizando o `valgrind`,
+dado um programa chamado `programa`, basta executar o seguinte:
+
+$ valgrind ./programa
+
+Após obter a resposta para a atividade, você deverá executar o programa
+`validador`, que irá solicitar a resposta obtida, e caso esteja correta, você
+receberá o código de resposta para a submissão da atividade.
+
+---
+
+## Resolução
+
+Compilar com símbolos de debug (`-g`) para que o valgrind mostre o número de linha:
+
+```bash
+gcc -g -o programa desafio.c
+valgrind --leak-check=full ./programa 2>&1
+```
+
+O relatório mostrará o stack trace do vazamento com o arquivo e linha exata:
+
+```
+==PID==    by 0x...: função (desafio.c:LINHA)
+```
+
+O número da linha indicada em `desafio.c` é a resposta a submeter ao validador.

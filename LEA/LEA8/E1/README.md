@@ -12,3 +12,13 @@ Neste exercício, o binário modificado é: `/bin/less`
 
 Observação: lembre-se de entender o que o binário faz, para
 utilizá-lo corretamente.
+
+---
+
+## Resolução
+
+O `less` permite executar comandos shell diretamente pelo operador `!` durante sua execução, mantendo os privilégios do SUID.
+
+```bash
+less /desafio/recompensa.txt
+```

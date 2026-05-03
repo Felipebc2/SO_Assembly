@@ -12,3 +12,13 @@ Neste exercício, o binário modificado é: `/bin/sed`
 
 Observação: lembre-se de entender o que o binário faz, para
 utilizá-lo corretamente.
+
+---
+
+## Resolução
+
+O `sed` com script vazio imprime o arquivo sem modificações, funcionando como `cat`, mas com os privilégios do SUID.
+
+```bash
+sed '' /desafio/recompensa.txt
+```

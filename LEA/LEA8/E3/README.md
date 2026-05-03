@@ -1,0 +1,24 @@
+# Descrição
+
+Em cenários mais realistas, alguns binários do sistema
+possuem o bit SUID ativado e o usuário comum apenas o utiliza,
+ao invés de gerar uma cópia.
+
+Nesta atividade, um binário do sistema irá receber o bit SUID
+para o usuário idp e você deverá utilizá-lo para recuperar
+a sua recompensa, que é a resposta para a ativdade.
+
+Neste exercício, o binário modificado é: `/bin/base64`
+
+Observação: lembre-se de entender o que o binário faz, para
+utilizá-lo corretamente.
+
+---
+
+## Resolução
+
+O `base64` codifica o conteúdo do arquivo com os privilégios do SUID. Decodificando em seguida, obtemos o conteúdo original.
+
+```bash
+base64 /desafio/recompensa.txt | base64 -d
+```

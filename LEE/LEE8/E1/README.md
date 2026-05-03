@@ -2,7 +2,7 @@
 
 Nesta atividade, a pasta desafio possui um arquivo chamado `programa`, que é um
 binário que realiza algumas instruções envolvendo alocação dinâmica de memória.
-Esse programa realiza diversas chamadas à função `malloc`, e o objetivo é
+Esse programa realiza diversas chamadas à função `free`, e o objetivo é
 descobrir quantas vezes essa função é chamada durante a execução do programa.
 Para isso, você pode utilizar a ferramenta `ltrace`, que é um depurador de
 chamadas de funções em à bibliotecas compartilhadas em tempo de execução.
@@ -16,5 +16,5 @@ receberá o código de resposta para a submissão da atividade.
 ## Resolução
 
 ```bash
-ltrace -e malloc ./programa 2>&1 | grep -c malloc
+ltrace -e free ./programa 2>&1 | grep -c free
 ```
