@@ -1,4 +1,4 @@
-# E8 — Gerenciamento de Memória Livre: Listas Encadeadas - First Fit
+# E1 — Gerenciamento de Memória Livre: Listas Encadeadas - Worst Fit
 
 Existem duas estratégias comuns para gerenciar áreas livres de memória em
 sistemas operacionais: o uso de mapas de bits e o uso de listas encadeadas. No
